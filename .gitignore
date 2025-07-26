@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Logs
 logs
 *.log
@@ -137,3 +138,10 @@ dist
 # Vite logs files
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+=======
+# Dependency directories
+node_modules/
+
+# dotenv environment variables file
+.env
+>>>>>>> 1960cfe (initial commit)
