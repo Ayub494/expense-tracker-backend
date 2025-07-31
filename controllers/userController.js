@@ -14,7 +14,7 @@ exports.login = async (req, res) => {
         const { username, password } = req.body;
         const user = await userModel.login(username, password);
         if (user) {
-            res.json({ message: 'Login successful', flag: true, user });
+            res.status(200).json({ message: 'Login successful', flag: true, user });
         } else {
             res.status(401).json({ message: 'Invalid credentials' });
         }
