@@ -22,3 +22,14 @@ exports.login = async (req, res) => {
         res.status(400).json({ message: 'Error during login', error: error.message });
     }
 }
+
+exports.addExpense = async (req, res) => {
+    try {
+        const {item, price, category,userId } = req.body;
+        // Assuming you have a method to add an expense in userModel
+        const data = await userModel.addExpense(item, price, category, userId);
+        res.json({ message: 'Expense added successfully', data });
+    } catch (error) {
+        res.status(400).json({ message: 'Error adding expense', error: error.message });
+    }
+}

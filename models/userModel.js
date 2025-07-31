@@ -13,3 +13,11 @@ exports.login = async (username, password) => {
     }
     return null;
 }
+
+exports.addExpense = async (item, price, category, userId) => {
+    const result = await db.query(
+        'INSERT INTO expenses (item, Price, category, user_id) VALUES ($1, $2, $3, $4) RETURNING *',
+        [item, price, category, userId]
+    );
+    return result.rows[0];
+}
